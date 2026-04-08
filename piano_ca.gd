@@ -30,7 +30,14 @@ func _process(delta: float) -> void:
 	#######################
 	
 	
+	# Volume
+	for note in all_keys:
+		if Input.is_action_just_pressed(note):
+			$Player.get_node(note + "_Player").play()
+			$Player.get_node(note + "_Player").volume_db = $SliderVolume.value
+			
 	
+	# Highliting
 	if Input.is_action_pressed("WhiteKey1"):
 		$PianoKeys/WhiteKey1.modulate = Color(0.93, 0.0, 0.0, 1.0)
 	else:

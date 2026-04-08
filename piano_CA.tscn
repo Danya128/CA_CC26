@@ -3,6 +3,19 @@
 [ext_resource type="Script" uid="uid://cbobx7g3tuffj" path="res://piano_ca.gd" id="1_7vrqa"]
 [ext_resource type="Texture2D" uid="uid://dpo3j72vnspc7" path="res://download (2).png" id="2_s6trk"]
 [ext_resource type="Texture2D" uid="uid://kxvin31du7mv" path="res://download.png" id="3_a7f4x"]
+[ext_resource type="Texture2D" uid="uid://cun8bbclcyje4" path="res://download (1).png" id="4_a7f4x"]
+[ext_resource type="AudioStream" uid="uid://0slywjr82d24" path="res://c-note-sound.wav" id="5_psiqx"]
+[ext_resource type="AudioStream" uid="uid://by2foqna505pr" path="res://fa-note-sound.wav" id="6_p7flq"]
+[ext_resource type="AudioStream" uid="uid://88iurqsol0dl" path="res://re-note-sound.wav" id="7_0kp7u"]
+[ext_resource type="AudioStream" uid="uid://u733emekeosl" path="res://salt-note-sound.wav" id="8_p1eac"]
+[ext_resource type="AudioStream" uid="uid://d04byt16elopp" path="res://sound-note-c-stretched.wav" id="9_p5uda"]
+[ext_resource type="AudioStream" uid="uid://dhe6g0h74c4gy" path="res://the-sound-of-the-note-a-is-stretched.wav" id="10_jhkvx"]
+[ext_resource type="AudioStream" uid="uid://d4m50yk6rymf3" path="res://the-sound-of-the-note-d-is-stretched.wav" id="11_oq7bg"]
+[ext_resource type="AudioStream" uid="uid://bfpxkihhb44f4" path="res://the-sound-of-the-note-do-in-the-second-octave.wav" id="12_04ygu"]
+[ext_resource type="AudioStream" uid="uid://cvsacbeosgg3b" path="res://the-sound-of-the-note-do.wav" id="13_6e8s7"]
+[ext_resource type="AudioStream" uid="uid://duxjq025gub37" path="res://the-sound-of-the-note-la.wav" id="14_4x8rf"]
+[ext_resource type="AudioStream" uid="uid://8744wffarg0p" path="res://the-sound-of-the-note-mi.wav" id="15_525xk"]
+[ext_resource type="AudioStream" uid="uid://dbc1iqb5sjsl2" path="res://the-sound-of-the-note-sol-extended.wav" id="16_d2oa5"]
 
 [node name="Piano" type="Node2D" unique_id=1217171272]
 script = ExtResource("1_7vrqa")
@@ -105,3 +118,55 @@ texture = ExtResource("2_s6trk")
 position = Vector2(901, 211)
 scale = Vector2(0.22129297, 0.2113472)
 texture = ExtResource("3_a7f4x")
+
+[node name="Screen" type="Node2D" parent="." unique_id=152492203]
+
+[node name="Download(1)" type="Sprite2D" parent="Screen" unique_id=954060395]
+position = Vector2(603, 219)
+scale = Vector2(0.33700067, 0.2902715)
+texture = ExtResource("4_a7f4x")
+
+[node name="SliderVolume" type="VSlider" parent="." unique_id=1631727233]
+offset_left = 159.0
+offset_top = 127.0
+offset_right = 305.0
+offset_bottom = 331.0
+max_value = 25.0
+
+[node name="Player" type="Node2D" parent="." unique_id=883096223]
+
+[node name="WhiteKey1_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=1096844625]
+stream = ExtResource("5_psiqx")
+
+[node name="WhiteKey2_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=231511238]
+stream = ExtResource("6_p7flq")
+
+[node name="WhiteKey3_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=112368341]
+stream = ExtResource("7_0kp7u")
+
+[node name="WhiteKey4_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=673998507]
+stream = ExtResource("8_p1eac")
+
+[node name="WhiteKey5_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=680161273]
+stream = ExtResource("9_p5uda")
+
+[node name="WhiteKey6_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=2009905191]
+stream = ExtResource("10_jhkvx")
+
+[node name="WhiteKey7_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=239543051]
+stream = ExtResource("11_oq7bg")
+
+[node name="WhiteKey8_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=605821838]
+stream = ExtResource("12_04ygu")
+
+[node name="BlackKey1_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=374904539]
+stream = ExtResource("13_6e8s7")
+
+[node name="BlackKey2_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=224700463]
+stream = ExtResource("14_4x8rf")
+
+[node name="BlackKey3_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=2039477045]
+stream = ExtResource("15_525xk")
+
+[node name="BlackKey4_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=1326386896]
+stream = ExtResource("16_d2oa5")
