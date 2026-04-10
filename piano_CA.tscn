@@ -16,6 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://duxjq025gub37" path="res://the-sound-of-the-note-la.wav" id="14_4x8rf"]
 [ext_resource type="AudioStream" uid="uid://8744wffarg0p" path="res://the-sound-of-the-note-mi.wav" id="15_525xk"]
 [ext_resource type="AudioStream" uid="uid://dbc1iqb5sjsl2" path="res://the-sound-of-the-note-sol-extended.wav" id="16_d2oa5"]
+[ext_resource type="AudioStream" uid="uid://cww5oa5j0rerg" path="res://guitar-solo-27194.ogg" id="17_p5uda"]
+[ext_resource type="Texture2D" uid="uid://cpuvhhgd5fxoo" path="res://guitar.png" id="18_jhkvx"]
+[ext_resource type="Texture2D" uid="uid://crin53g16x77m" path="res://drums.png" id="19_oq7bg"]
+[ext_resource type="AudioStream" uid="uid://comn46gtr6cnb" path="res://drums.ogg" id="20_04ygu"]
 
 [node name="Piano" type="Node2D" unique_id=1217171272]
 script = ExtResource("1_7vrqa")
@@ -170,3 +174,37 @@ stream = ExtResource("15_525xk")
 
 [node name="BlackKey4_Player" type="AudioStreamPlayer2D" parent="Player" unique_id=1326386896]
 stream = ExtResource("16_d2oa5")
+
+[node name="Guitar_part" type="Node2D" parent="." unique_id=204779508]
+
+[node name="guitarButton" type="ColorRect" parent="Guitar_part" unique_id=1392237928]
+offset_left = 311.0
+offset_top = 170.0
+offset_right = 363.0
+offset_bottom = 222.0
+
+[node name="player_guitar" type="AudioStreamPlayer2D" parent="Guitar_part" unique_id=1173462603]
+stream = ExtResource("17_p5uda")
+
+[node name="GuitarImg" type="Sprite2D" parent="Guitar_part" unique_id=1684692985]
+z_index = 1
+position = Vector2(337, 198)
+scale = Vector2(0.05244123, 0.048824593)
+texture = ExtResource("18_jhkvx")
+
+[node name="Drums_part" type="Node2D" parent="." unique_id=732231897]
+
+[node name="DrumsImg" type="Sprite2D" parent="Drums_part" unique_id=1082973475]
+z_index = 1
+position = Vector2(338.37497, 288.12503)
+scale = Vector2(0.044570155, 0.045475174)
+texture = ExtResource("19_oq7bg")
+
+[node name="player_drums" type="AudioStreamPlayer2D" parent="Drums_part" unique_id=635299170]
+stream = ExtResource("20_04ygu")
+
+[node name="drumsButton" type="ColorRect" parent="Drums_part" unique_id=691593256]
+offset_left = 313.0
+offset_top = 262.0
+offset_right = 365.0
+offset_bottom = 314.0

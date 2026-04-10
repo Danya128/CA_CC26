@@ -1,6 +1,8 @@
 extends Node2D
 
 var speed = 200
+var isOn_guitar = false
+var isOn_drums = false
 
 
 var all_keys = [
@@ -12,6 +14,7 @@ var all_keys = [
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+	
 
 func spawn_note():
 	var note = $Note/Note_img.duplicate()
@@ -25,10 +28,43 @@ func spawn_note():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	var guitar_player = $Guitar_part/player_guitar
+	var drums_player = $Drums_part/player_drums
+	
+	#######################
+	# DRUMS 
+	#######################
+	
+	if Input.is_action_just_pressed("Drums"):
+		if isOn_drums == true:
+			isOn_drums = false
+			drums_player.stop()
+			$Drums_part/drumsButton.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		else:
+			isOn_drums = true
+			drums_player.play()
+			$Drums_part/drumsButton.modulate = Color(0.254, 0.591, 0.208, 1.0)
+			
+			
+			
+	#######################
+	# GUITAR
+	#######################
+	
+	if Input.is_action_just_pressed("Guitar"):
+		if isOn_guitar == true:
+			isOn_guitar = false
+			guitar_player.stop()
+			$Guitar_part/guitarButton.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		else:
+			isOn_guitar = true
+			guitar_player.play()
+			$Guitar_part/guitarButton.modulate = Color(0.254, 0.591, 0.208, 1.0)
+	
+	
 	#######################
 	# KEYS
 	#######################
-	
 	
 	# Volume
 	for note in all_keys:
