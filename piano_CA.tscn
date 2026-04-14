@@ -20,16 +20,17 @@
 [ext_resource type="Texture2D" uid="uid://cpuvhhgd5fxoo" path="res://guitar.png" id="18_jhkvx"]
 [ext_resource type="Texture2D" uid="uid://crin53g16x77m" path="res://drums.png" id="19_oq7bg"]
 [ext_resource type="AudioStream" uid="uid://comn46gtr6cnb" path="res://drums.ogg" id="20_04ygu"]
+[ext_resource type="Texture2D" uid="uid://dkbddjg606o25" path="res://randomImg.png" id="21_jhkvx"]
 
 [node name="Piano" type="Node2D" unique_id=1217171272]
 script = ExtResource("1_7vrqa")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=810657179]
-offset_left = 93.0
-offset_top = 29.0
-offset_right = 1093.0
-offset_bottom = 629.0
-color = Color(0.33138007, 0.15760243, 0.15243223, 1)
+offset_left = 99.0
+offset_top = 35.0
+offset_right = 1099.0
+offset_bottom = 635.0
+color = Color(0.38777447, 0.082621746, 0.0697314, 1)
 
 [node name="PianoKeys" type="Node2D" parent="." unique_id=861525569]
 
@@ -178,25 +179,31 @@ stream = ExtResource("16_d2oa5")
 [node name="Guitar_part" type="Node2D" parent="." unique_id=204779508]
 
 [node name="guitarButton" type="ColorRect" parent="Guitar_part" unique_id=1392237928]
-offset_left = 311.0
-offset_top = 170.0
-offset_right = 363.0
-offset_bottom = 222.0
+offset_left = 286.0
+offset_top = 206.0
+offset_right = 296.0
+offset_bottom = 258.0
 
 [node name="player_guitar" type="AudioStreamPlayer2D" parent="Guitar_part" unique_id=1173462603]
 stream = ExtResource("17_p5uda")
 
 [node name="GuitarImg" type="Sprite2D" parent="Guitar_part" unique_id=1684692985]
 z_index = 1
-position = Vector2(337, 198)
+position = Vector2(348, 233)
 scale = Vector2(0.05244123, 0.048824593)
 texture = ExtResource("18_jhkvx")
+
+[node name="Button" type="Button" parent="Guitar_part" unique_id=1117166516]
+offset_left = 320.0
+offset_top = 282.0
+offset_right = 369.0
+offset_bottom = 330.0
 
 [node name="Drums_part" type="Node2D" parent="." unique_id=732231897]
 
 [node name="DrumsImg" type="Sprite2D" parent="Drums_part" unique_id=1082973475]
 z_index = 1
-position = Vector2(338.37497, 288.12503)
+position = Vector2(345, 306)
 scale = Vector2(0.044570155, 0.045475174)
 texture = ExtResource("19_oq7bg")
 
@@ -204,7 +211,37 @@ texture = ExtResource("19_oq7bg")
 stream = ExtResource("20_04ygu")
 
 [node name="drumsButton" type="ColorRect" parent="Drums_part" unique_id=691593256]
-offset_left = 313.0
-offset_top = 262.0
-offset_right = 365.0
-offset_bottom = 314.0
+offset_left = 286.0
+offset_top = 278.0
+offset_right = 296.0
+offset_bottom = 330.0
+
+[node name="Button2" type="Button" parent="Drums_part" unique_id=1632021892]
+offset_left = 320.0
+offset_top = 209.0
+offset_right = 370.0
+offset_bottom = 257.0
+
+[node name="Random" type="Node2D" parent="." unique_id=1344041229]
+
+[node name="randomButton" type="ColorRect" parent="Random" unique_id=348153794]
+offset_left = 286.0
+offset_top = 134.0
+offset_right = 296.0
+offset_bottom = 186.0
+
+[node name="Button3" type="Button" parent="Random" unique_id=761134259]
+offset_left = 320.0
+offset_top = 136.0
+offset_right = 370.0
+offset_bottom = 184.0
+
+[node name="RandomImg" type="Sprite2D" parent="Random" unique_id=1652320744]
+z_index = 1
+position = Vector2(345, 160.5)
+scale = Vector2(0.05786619, 0.053345386)
+texture = ExtResource("21_jhkvx")
+
+[connection signal="pressed" from="Guitar_part/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Drums_part/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Random/Button3" to="." method="_on_button_3_pressed"]
