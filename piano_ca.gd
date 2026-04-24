@@ -5,7 +5,7 @@ var isOn_guitar = false
 var isOn_drums = false
 var isOn_random = false
 
-var random_delay = 0.4
+var random_delay = 0.3
 var random_timer = 0.0
 
 
